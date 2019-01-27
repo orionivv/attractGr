@@ -22,17 +22,17 @@
       height: 7px;
       border-top: 1px solid #000;
       border-left: 1px solid #000;
-      top: 12px;
+      top: 15px;
       right: 10px;
       transform: rotate(-135deg);
     }
     select {
       font-family: Raleway;
       width: 100%;
-      padding: 5px 35px 5px 5px;
-      font-size: 16px;
+      padding: 5px 35px 5px 16px;
+      font-size: 15px;
       border: 1px solid #ccc;
-      height: 34px;
+      height: 42px;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
@@ -72,7 +72,7 @@
     }
     .checkmark {
       position: absolute;
-      top: 0;
+      top: -2px;
       left: 0;
       height: 15px;
       width: 15px;
