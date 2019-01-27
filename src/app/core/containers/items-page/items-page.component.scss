@@ -1,0 +1,35 @@
+.Montserrat {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.Raleway {
+  font-family: Raleway;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.wrapper {
+  display: flex;
+  filter-section {
+    min-width: 300px;
+  }
+  .cards {
+    flex-basis: 1000px;
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-gap: 30px;
+    grid-template: repeat(auto-fit, 320px) / repeat(auto-fit, 270px);
+    .block {
+      cursor: pointer;
+      border: 1px solid #e9e9e9;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

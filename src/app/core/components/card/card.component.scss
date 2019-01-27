@@ -1,0 +1,71 @@
+.Montserrat {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.Raleway {
+  font-family: Raleway;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+:host {
+  &:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    .image {
+      .fill {
+        background: rgba(28, 184, 255, 0.7);
+      }
+    }
+  }
+}
+.image {
+  position: relative;
+  height: 180px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .fill {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(transparent 60%, black 115%);
+  }
+  .city {
+    position: absolute;
+    bottom: 11px;
+    left: 23px;
+    color: white;
+    @extend .Raleway;
+  }
+}
+.content {
+  padding: 16px 19px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  .title {
+    @extend .Montserrat;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+  }
+  .bottom {
+    margin-top: auto;
+    display: flex;
+    .category {
+      @extend .Raleway;
+      letter-spacing: 0.33px;
+      color: #a6a9af;
+    }
+    .price {
+      @extend .Montserrat;
+      margin-left: auto;
+      font-weight: 600;
+    }
+  }
+}
