@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <filter-section
+    [cities]="cities"
+    [categories]="categories"
+  >
+  </filter-section>
+
+  <div class="cards">
+    <card-item
+      class="block"
+      *ngFor="let item of items; let i = index"
+      [item]="item"
+      [index]="i"
+    >
+    </card-item>
+  </div>
+</div>

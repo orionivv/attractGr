@@ -1,0 +1,32 @@
+<form class="filter" [formGroup]="filterForm" >
+  <div class="block">
+    <p class="name">City</p>
+    <div class="select-wrapper">
+      <select formControlName="cityControl" [compareWith]="compareFn">
+        <option *ngFor="let city of cities" [ngValue]="city">{{city.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="name">Categories</p>
+    <label formArrayName="categoryControl" *ngFor="let category of filterForm.controls.categoryControl.controls; let i = index">
+      <input type="checkbox" [formControlName]="i">
+      <span class="checkmark"></span>
+      {{categories[i].name}}
+    </label>
+  </div>
+
+  <div class="block">
+    <p class="name">Price</p>
+    <ng5-slider (valueChange)='changeV()' [(highValue)]="priceHighValue" [(value)]="priceValue" [options]="options"></ng5-slider>
+    <div class="price">
+      <div class="values">
+        <p class="form">{{priceValue | currency:'USD': 'symbol' : '1.0'}}</p>
+        -
+        <p class="before">{{priceHighValue | currency:'USD': 'symbol' : '1.0'}}</p>
+      </div>
+      <button type="submit" (click)="filtered()">Filter</button>
+    </div>
+  </div>
+</form>

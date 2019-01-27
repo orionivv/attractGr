@@ -1,0 +1,12 @@
+<div class="image">
+  <img [src]="getImageUrl(index)" alt="Image Item">
+  <div class="fill"></div>
+  <span class="city">{{item.city.name}}</span>
+</div>
+<div class="content">
+  <p class="title">{{item.name}}</p>
+  <div class="bottom">
+    <div class="category">{{item.category.name}}</div>
+    <div class="price">{{item.price | currency:'USD': 'symbol' : '1.0'}}</div>
+  </div>
+</div>
