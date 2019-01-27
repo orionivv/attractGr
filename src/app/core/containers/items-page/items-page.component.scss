@@ -1,35 +1,33 @@
-.Montserrat {
-  font-family: Montserrat;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
+filter-section {
+  width: 350px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-
-.Raleway {
-  font-family: Raleway;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 22px;
-}
-
-.wrapper {
+.content {
+  margin-left: 350px;
+  height: 100vh;
   display: flex;
-  filter-section {
-    min-width: 300px;
-  }
-  .cards {
-    flex-basis: 1000px;
-    grid-column: 2 / -1;
-    grid-row: 1 / -1;
-    display: grid;
-    grid-gap: 30px;
-    grid-template: repeat(auto-fit, 320px) / repeat(auto-fit, 270px);
-    .block {
-      cursor: pointer;
-      border: 1px solid #e9e9e9;
-      height: 320px;
-      display: flex;
-      flex-direction: column;
-    }
+  flex-direction: column;
+}
+app-loader {
+  margin: auto;
+}
+.no-item {
+  margin: auto;
+  font-family: Montserrat;
+  font-size: 20px;
+}
+.cards {
+  padding-top: 50px;
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+  display: grid;
+  grid-gap: 30px;
+  grid-template: repeat(auto-fit, 300px) / repeat(auto-fit, 270px);
+  .block {
+    cursor: pointer;
+    border: 1px solid #e9e9e9;
+    //height: 320px;
   }
 }

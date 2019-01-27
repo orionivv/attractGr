@@ -1,10 +1,12 @@
 .filter {
-  padding: 10px;
+  padding: 50px;
 }
 .block {
   margin-bottom: 50px;
   .name {
+    color: #33363e;
     text-transform: uppercase;
+    font-size: 18px;
     font-family: Montserrat;
     font-weight: 700;
     margin-bottom: 15px;
@@ -38,19 +40,21 @@
     }
   }
   label {
+    font-family: Raleway;
+    font-size: 15px;
+    font-weight: 400;
+    color: #4c505b;
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 27px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 16px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     &:hover input ~ .checkmark {
-      background-color: #2196f330;
-      border: 1px solid #2196f330;
+      border: 1px solid #1cb8ff;
     }
     input {
       position: absolute;
@@ -60,7 +64,7 @@
       width: 0;
       &:checked ~ .checkmark {
         background-color: #fff;
-        border: 1px solid #2196f330;
+        border: 1px solid #1cb8ff;
         &:after {
           display: block;
         }
@@ -82,7 +86,7 @@
         top: 2px;
         width: 3px;
         height: 7px;
-        border: solid blue;
+        border: solid #1cb8ff;
         border-width: 0 2px 2px 0;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -91,15 +95,49 @@
     }
   }
   .price{
+    margin-top: 10px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     .values {
       display: flex;
-
+      .dash {
+        margin: 0 10px;
+      }
+      .from, .before {
+        width: 40px;
+        color: #33363e;
+        font-family: Montserrat;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+    button {
+      cursor: pointer;
+      background-color: #1cb8ff;
+      width: 100px;
+      height: 35px;
+      color: #ffffff;
+      font-family: Montserrat;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      outline: none;
+      border: 2px solid #1cb8ff;
+      &:hover {
+        background-color: #00afff;
+        border: 2px solid #00afff;
+      }
+      &:active {
+        color: #1cb8ff;
+        background-color: #fff;
+      }
     }
   }
 }
 
 .block ::ng-deep ng5-slider {
+  margin-top: 18px;
   .ng5-slider-bubble {
     display: none !important;
   }

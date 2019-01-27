@@ -25,8 +25,16 @@ export interface IGetDataSuccessful {
 export interface INormalizeData {
   id: number;
   name: string;
-  city: string;
-  category: string;
+  city: ICity;
+  category: ICategory;
   price: number;
 }
+
+export interface IFilterData {
+  city: number;
+  categories: Array<number>;
+  minPrice: number;
+  maxPrice: number;
+}
+
 

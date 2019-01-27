@@ -1,7 +1,7 @@
 import {CoreActionTypes} from './core.actions';
-import {ICoreDataState, coreDataInitialState} from './core.state';
+import { coreDataInitialState} from './core.state';
 
-export function coreDataReducer(state = coreDataInitialState, action): ICoreDataState {
+export function coreDataReducer(state = coreDataInitialState, action) {
   switch (action.type) {
 
     case CoreActionTypes.GetTestData: {
@@ -28,6 +28,31 @@ export function coreDataReducer(state = coreDataInitialState, action): ICoreData
       };
     }
 
+    case CoreActionTypes.FilterDataSuccessful: {
+      return {
+        ...state,
+        filteredData: action.payload,
+        loading: false
+      };
+    }
+
+    case CoreActionTypes.SetFilter:
+    case CoreActionTypes.GetFilterSuccessful: {
+      return {
+        ...state,
+        filter: action.payload
+      };
+    }
+
+    case CoreActionTypes.FilterData: {
+      return {
+        ...state,
+        loading: true
+      };
+    }
+
+
+
     default: {
       return state;
     }
@@ -44,6 +69,5 @@ function getEntitiesFromData(items) {
   return {
     entities,
     ids,
-    initial: items
   };
 }

@@ -4,9 +4,8 @@ import {ICoreDataState} from './core.state';
 export const selectGlobalState = (state => state);
 
 export const selectCoreDataState = (state => state.core);
-export const selectData = createSelector(selectCoreDataState, (state: ICoreDataState) => state.data);
-export const selectCity = createSelector(selectCoreDataState, (state: ICoreDataState) => state.city && state.city.initial);
-export const selectCategory = createSelector(selectCoreDataState, (state: ICoreDataState) => state.category && state.category.initial);
+export const selectCity = createSelector(selectCoreDataState, (state: ICoreDataState) => state.city);
+export const selectCategory = createSelector(selectCoreDataState, (state: ICoreDataState) => state.category);
 export const selectLoadingData = createSelector(selectCoreDataState, (state: ICoreDataState) => state.loading);
 export const selectNormalizedData = createSelector(selectCoreDataState, (state: ICoreDataState) =>
   state.normalizedData
@@ -16,3 +15,5 @@ export const selectAllData = createSelector(selectCoreDataState, (state: ICoreDa
   category: state.category,
   city: state.city
 }));
+export const selectFilter = createSelector(selectCoreDataState, (state: ICoreDataState) => state.filter);
+export const selectFilteredData = createSelector(selectCoreDataState, (state: ICoreDataState) => state.filteredData);

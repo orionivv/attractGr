@@ -1,17 +1,34 @@
-<div class="wrapper">
+
   <filter-section
     [cities]="cities"
     [categories]="categories"
+    (filter)="filter($event)"
+    [filterSettings]="filterSettings"
+    (setFilter)="setFilter($event)"
   >
   </filter-section>
+  <div class="content">
 
-  <div class="cards">
-    <card-item
-      class="block"
-      *ngFor="let item of items; let i = index"
-      [item]="item"
-      [index]="i"
+    <app-loader
+      *ngIf="loading"
     >
-    </card-item>
+    </app-loader>
+
+    <p
+      class="no-item"
+      *ngIf="items && !items.length && !loading"
+    >
+      No items, please change filter
+    </p>
+
+    <div class="cards" *ngIf="!loading">
+      <card-item
+        class="block"
+        *ngFor="let item of items; let i = index"
+        [item]="item"
+        [index]="i"
+      >
+      </card-item>
+    </div>
   </div>
-</div>
+

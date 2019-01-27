@@ -21,6 +21,16 @@ export class CoreStoreService {
   dispatchGetTestData() {
     this.dispatchAction(new Action.GetTestData());
   }
+  dispatchSetFilter(data) {
+    this.dispatchAction(new Action.SetFilter(data));
+  }
+  dispatchFilterData() {
+    this.dispatchAction(new Action.FilterData());
+  }
+  dispatchGetFilter() {
+    this.dispatchAction(new Action.GetFilter());
+  }
+
 
   getLoadingDataStatus() {
     return this.store$.pipe(
@@ -42,15 +52,21 @@ export class CoreStoreService {
       select(Selector.selectCity)
     );
   }
-  getData() {
-    return this.store$.pipe(
-      select(Selector.selectData)
-    );
-  }
   getAllData() {
     return this.store$.pipe(
       select(Selector.selectAllData)
     );
   }
+  getFilter() {
+    return this.store$.pipe(
+      select(Selector.selectFilter)
+    );
+  }
+  getFilteredData() {
+    return this.store$.pipe(
+      select(Selector.selectFilteredData)
+    );
+  }
+
 }
 
