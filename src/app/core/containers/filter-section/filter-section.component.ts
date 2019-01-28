@@ -54,15 +54,13 @@ export class FilterSectionComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.categories && changes.categories.currentValue && !changes.categories.previousValue) {
-      this.filterForm.removeControl('categoryControl');
-      this.filterForm.addControl('categoryControl', new FormArray(this.categories.ids.map(c =>
+      this.filterForm.setControl('categoryControl', new FormArray(this.categories.ids.map(c =>
         new FormControl(this.filterSettings.categories.includes(Number(c)))
       )));
     }
     if (changes.cities && changes.cities.currentValue && !changes.cities.previousValue) {
       const city = this.filterSettings.city ? this.cities.entities[this.filterSettings.city] : this.notChosen;
-      this.filterForm.removeControl('cityControl');
-      this.filterForm.addControl('cityControl', new FormControl(city));
+      this.filterForm.setControl('cityControl', new FormControl(city));
     }
   }
 
