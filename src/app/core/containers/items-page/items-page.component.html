@@ -1,9 +1,9 @@
 
 <filter-section
-  [cities]="cities"
-  [categories]="categories"
+  [cities]="(cities$ | async)"
+  [categories]="(categories$ | async)"
   (filter)="filter($event)"
-  [filterSettings]="filterSettings"
+  [filterSettings]="(filterSettings$ | async)"
   (setFilter)="setFilter($event)"
 >
 </filter-section>

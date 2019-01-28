@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CoreStoreService} from '../../store/core-store.service';
 import {ICategory, ICity, IFilterData, INormalizeData} from '../../models/core.interface';
 import {entityData} from '../../store/core.state';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'items-page',
@@ -11,9 +12,9 @@ import {entityData} from '../../store/core.state';
 export class ItemsPageComponent implements OnInit {
 
   items: Array<INormalizeData>;
-  cities: entityData<ICity>;
-  categories: entityData<ICategory>;
-  filterSettings: IFilterData;
+  cities$: Observable<entityData<ICity>>;
+  categories$: Observable<entityData<ICategory>>;
+  filterSettings$: Observable<IFilterData>;
 
   loading: boolean;
 
@@ -33,19 +34,11 @@ export class ItemsPageComponent implements OnInit {
         this.items = items;
       });
 
-    this.coreStoreService.getCity()
-      .subscribe(cities => {
-        this.cities = cities;
-      });
+    this.cities$ = this.coreStoreService.getCity();
 
-    this.coreStoreService.getCategory()
-      .subscribe( categories => {
-        this.categories = categories;
-    });
+    this.categories$ = this.coreStoreService.getCategory();
 
-    this.coreStoreService.getFilter().subscribe( filterSettings => {
-      this.filterSettings = filterSettings;
-    });
+    this.filterSettings$ = this.coreStoreService.getFilter();
   }
 
   filter(data) {
