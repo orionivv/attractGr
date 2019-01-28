@@ -15,16 +15,16 @@ export class FilterSectionComponent implements OnInit, OnChanges {
   filterForm: FormGroup;
   timeout: number;
 
-  priceValue = 0;
-  priceHighValue = 250;
+  priceValue: number;
+  priceHighValue: number;
   options: Options = {
     floor: 0,
     ceil: 250
   };
-   notChosen = {
-     id: 0,
-     name: 'Not chosen'
-   };
+  notChosen = {
+   id: 0,
+   name: 'Not chosen'
+  };
 
   @Input() cities: entityData<ICity>;
   @Input() categories: entityData<ICategory>;

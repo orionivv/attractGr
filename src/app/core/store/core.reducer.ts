@@ -50,9 +50,6 @@ export function coreDataReducer(state = coreDataInitialState, action) {
         loading: true
       };
     }
-
-
-
     default: {
       return state;
     }

@@ -109,7 +109,13 @@ export class CoreEffects {
       if (data) {
         return new Action.GetFilterSuccessful(data);
       } else {
-        return new Action.GetFilterFailure();
+        const defaultFilter = {
+          city: 0,
+          categories: [],
+          minPrice: 0,
+          maxPrice: 250,
+        };
+        return new Action.GetFilterSuccessful(defaultFilter);
       }
     })
   );

@@ -84,4 +84,6 @@ export type CoreActions =
   | FilterDataFailure
   | SetFilter
   | GetFilter
+  | GetFilterSuccessful
+  | GetFilterFailure
 ;

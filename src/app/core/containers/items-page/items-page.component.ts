@@ -49,7 +49,7 @@ export class ItemsPageComponent implements OnInit {
   }
 
   filter(data) {
-    this.coreStoreService.dispatchSetFilter(data);
+    this.setFilter(data);
     this.coreStoreService.dispatchFilterData();
   }
 
