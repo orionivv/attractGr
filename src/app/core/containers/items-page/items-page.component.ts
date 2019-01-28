@@ -25,8 +25,9 @@ export class ItemsPageComponent implements OnInit {
   ngOnInit() {
     this.coreStoreService.dispatchGetTestData();
 
-    this.coreStoreService.getLoadingDataStatus().subscribe( isLoading => {
-      this.loading = isLoading;
+    this.coreStoreService.getLoadingDataStatus()
+      .subscribe( isLoading => {
+        this.loading = isLoading;
     });
 
     this.coreStoreService.getFilteredData()
